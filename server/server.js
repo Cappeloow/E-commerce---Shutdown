@@ -7,11 +7,23 @@ const app = express();
 
 const CLIENT_URL = "http://localhost:5173"
 
+const UserRoute = require('./user/userRoute')
+
+
+
 app.use(cors({
     origin:CLIENT_URL,
 }))
 
 app.use(express.json())
+
+
+
+app.get('/status', (req, res) => {
+    res.status(200).json({ message: "OK" });
+});
+
+app.use('/user', UserRoute);
 
 
 
