@@ -1,3 +1,15 @@
+
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+ {
+    "username": "Kiss@hotmail.com",
+    "password": "21821112"   
+}
+
+
 ###
 
+GET http://localhost:3000/user/postsomething
 
+###
