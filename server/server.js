@@ -4,12 +4,17 @@ const express = require('express');
 const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const app = express();
-
 const CLIENT_URL = "http://localhost:5173"
 
-const UserRoute = require('./user/userRoute')
+const UserRoute = require('./user/userRoute');
+const cookieSession = require('cookie-session');
 
 
+app.use(cookieSession({
+    name: 'session', 
+    keys: ["SECRET"], 
+    maxAge: 24 * 60 * 60 * 1000, 
+  }));
 
 app.use(cors({
     origin:CLIENT_URL,

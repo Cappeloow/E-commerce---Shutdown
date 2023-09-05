@@ -1,8 +1,9 @@
 const express = require("express");
 const route = express.Router();
+const bcrypt = require('bcrypt');
 
-route.get('/test', (req,res) => {
-    res.status(200).json({message:"userRoute works"});
+route.post('/create', (req,res) => {
+
 })
 
 route.get('/postsomething', (req, res) => {
