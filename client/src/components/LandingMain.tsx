@@ -2,8 +2,8 @@ import React from "react";
 
 type Props = {};
 
-function Main({}: Props) {
+function LandingMain({}: Props) {
   return <div>Main</div>;
 }
 
-export default Main;
+export default LandingMain;
