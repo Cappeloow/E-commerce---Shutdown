@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
 type Props = {};
-
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 function Header({}: Props) {
   const [isRegisterOpen, setRegisterIsOpen] = useState(false);
   const [isLoginOpen, setLoginIsOpen] = useState(false);
@@ -23,23 +24,9 @@ function Header({}: Props) {
       <button onClick={() => handleOpen("login")}>Login</button>
       <p onClick={() => handleOpen("register")}>register</p>
       {isRegisterOpen ? (
-        <dialog open>
-          <button onClick={() => setRegisterIsOpen(false)}>X</button>
-          <p className="dialog-title">Skapa ett nytt rum</p>
-          <form method="dialog">
-            <input placeholder="Rumsnamn" type="text" />
-          </form>
-        </dialog>
+        <RegisterForm setRegisterIsOpen={setRegisterIsOpen} />
       ) : null}
-      {isLoginOpen ? (
-        <dialog open>
-          <button onClick={() => setLoginIsOpen(false)}>X</button>
-          <p className="dialog-title">Logga in här</p>
-          <form method="dialog">
-            <input placeholder="Rumsnamn" type="text" />
-          </form>
-        </dialog>
-      ) : null}
+      {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
     </header>
   );
 }

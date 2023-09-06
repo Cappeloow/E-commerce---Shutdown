@@ -1,13 +1,18 @@
 import React from "react";
 
-type Props = {};
+type Props = {
+  setLoginIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-function LoginForm({}: Props) {
+function LoginForm({ setLoginIsOpen }: Props) {
   return (
-    <div>
-      <input type="text" />
-      <input type="text" />
-    </div>
+    <dialog open>
+      <button onClick={() => setLoginIsOpen(false)}>X</button>
+      <p className="dialog-title">Logga in här</p>
+      <form method="dialog">
+        <input placeholder="Rumsnamn" type="text" />
+      </form>
+    </dialog>
   );
 }
 
