@@ -3,4 +3,4 @@ const initStripe = () => {
     return stripe;
 }
 
-module.exports ={ initStripe};
+module.exports =initStripe;

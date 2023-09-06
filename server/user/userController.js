@@ -4,9 +4,8 @@ const path = require('path');
 
 const initStripe = require('../stripe');
 const stripe = initStripe();
-const customer = await stripe.customers.create({
-  description: 'My First Test Customer (created for API docs at https://www.stripe.com/docs/api)',
-});
+
+
 
 
 const createAccount = async (req, res) => {
@@ -30,8 +29,12 @@ const createAccount = async (req, res) => {
             username,
             password: hashedPassword,
           };
-    
-    
+          
+
+          const customer = await stripe.customers.create({
+            name:username
+          });
+          
           existingUserData.push(newUser);
     
           fs.writeFileSync(userDataFilePath, JSON.stringify(existingUserData, null, 2));
