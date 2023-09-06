@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import CartPage from "./components/CartPage";
-import LandingPage from "./components/LandingPage";
-
+import CartPage from "./pages/CartPage";
+import LandingPage from "./pages/LandingPage";
 function App() {
   return (
     <>
