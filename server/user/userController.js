@@ -10,7 +10,7 @@ const stripe = initStripe();
 
 const createAccount = async (req, res) => {
   try {
-    const { username, password } = req.body;
+    const { username, password, firstName } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
 
@@ -25,15 +25,21 @@ const createAccount = async (req, res) => {
     if (existingUserData.some((user) => user.username === username)) {
       res.status(400).json({ message: 'Username already exists. Please choose a different username.' });
     } else {
-        const newUser = {
-            username,
-            password: hashedPassword,
-          };
-          
+ 
 
           const customer = await stripe.customers.create({
-            name:username
+            name:firstName,
+            email:username,
           });
+
+          console.log(customer);
+          
+          const newUser = {
+            id:customer.id,
+            username:firstName,
+            email:username,
+            password: hashedPassword,
+          };
           
           existingUserData.push(newUser);
     
