@@ -3,13 +3,21 @@ POST http://localhost:3000/user/createUser
 Content-Type: application/json
 
  {
-    "username": "Kiss@hotmail.com",
+    "username": "Cappe@hotmail.com",
     "password": "21821112"   
 }
 
 
 ###
+POST http://localhost:3000/user/login
+Content-Type: application/json
 
+{
+    "username": "Kisdds@hotmail.com",
+    "password": "21821112"   
+}
+
+###
 GET http://localhost:3000/user/postsomething
 
 ###

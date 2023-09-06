@@ -41,10 +41,35 @@ const createAccount = async (req, res) => {
 };
 
 const logIn = async (req, res) => {
+  try {
     const { username, password } = req.body;
 
-}
+    const userDataFilePath = path.join(__dirname, '../db/user.json');
+    const existingUserData = JSON.parse(fs.readFileSync(userDataFilePath, 'utf-8'));
+    console.log(existingUserData);
+
+    const user = existingUserData.find((user) => user.username === username);
+
+    if (user) {
+      const match = await bcrypt.compare(password, user.password);
+
+      if (match) {
+        req.session.user = user;
+        res.status(200).json({message:"Login successful"})
+      } else {
+        console.log("Password doesn't match");
+        res.status(401).json({ error: "Password doesn't match" });
+      }
+    } else {
+      console.log("User doesn't exist");
+      res.status(404).json({ error: "User doesn't exist" });
+    }
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+};
 
 
 
-module.exports = {logIn,createAccount};
+module.exports = { logIn, createAccount };
