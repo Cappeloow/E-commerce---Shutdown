@@ -3,7 +3,7 @@ import React from "react";
 type Props = {};
 
 function CartMain({}: Props) {
-  return <div>CartMain</div>;
+  return <main>CartMain</main>;
 }
 
 export default CartMain;
