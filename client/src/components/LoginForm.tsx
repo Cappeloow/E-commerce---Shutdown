@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useUserContext } from "../context/UserContext";
-function LoginDialog() {
+type Props = {
+  setLoginIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+function LoginDialog({ setLoginIsOpen }: Props) {
   const { fetchLoginUser } = useUserContext();
 
   // Define state variables for the dialog and credentials
-  const [loginIsOpen, setLoginIsOpen] = useState(true);
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -26,7 +29,7 @@ function LoginDialog() {
   // }, [credentials]);
 
   return (
-    <dialog open={loginIsOpen}>
+    <dialog open>
       <button onClick={() => setLoginIsOpen(false)}>X</button>
       <p className="dialog-title">Logga in här</p>
       <form onSubmit={handleSubmit}>

@@ -8,9 +8,9 @@ function RegisterForm({ setRegisterIsOpen }: Props) {
   return (
     <dialog open>
       <button onClick={() => setRegisterIsOpen(false)}>X</button>
-      <p className="dialog-title">Skapa ett nytt rum</p>
+      <p className="dialog-title">Registrera dig här</p>
       <form method="dialog">
-        <input placeholder="Rumsnamn" type="text" />
+        <input placeholder="användarnamn" type="text" />
       </form>
     </dialog>
   );
