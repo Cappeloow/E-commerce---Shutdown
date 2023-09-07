@@ -8,11 +8,12 @@ function LandingMain({}: Props) {
 
   return (
     <main>
-      {data.map((product, index) => (
-        <div key={index}>
-          <h1>{product.name}</h1>
-        </div>
-      ))}
+      {data &&
+        data.map((product, index) => (
+          <div key={index}>
+            <h1>{product.name}</h1>
+          </div>
+        ))}
     </main>
   );
 }
