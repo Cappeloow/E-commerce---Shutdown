@@ -36,8 +36,9 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
   const [loginUser, setLoginUser] = useState<User | null>(null);
 
   async function fetchLoginUser(user: Credentials): Promise<void> {
+    console.log(user);
     try {
-      const response = await fetch("/api/users/login", {
+      const response = await fetch("/api/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +50,13 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
         setLoginUser(data);
       }
       if (response.status === 401) {
-        return data;
+        if (data.error === "User doesn't exist") {
+          console.log("User doesn't exist");
+        }
+        if (data.error === "Wrong Password") {
+          console.log("Wrong Password");
+        }
+        console.log("Authentication failed: Invalid username or password");
       }
     } catch (error) {
       console.log(error);

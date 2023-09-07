@@ -36,7 +36,7 @@ const createAccount = async (req, res) => {
           
           const newUser = {
             id:customer.id,
-            username:firstName,
+            username,
             email:username,
             password: hashedPassword,
           };
@@ -59,24 +59,26 @@ const createAccount = async (req, res) => {
 const logIn = async (req, res) => {
   try {
     const { username, password } = req.body;
-
+    
     const userDataFilePath = path.join(__dirname, '../db/user.json');
     const existingUserData = JSON.parse(fs.readFileSync(userDataFilePath, 'utf-8'));
-    console.log(existingUserData);
-
+    
     const user = existingUserData.find((user) => user.username === username);
+    
+    
 
     if (user) {
       const match = await bcrypt.compare(password, user.password);
 
       if (match) {
+        console.log("this is the user", user);
         req.session.user = user;
-        res.status(200).json({message:"Login successful"})
+        res.status(200).json(user)
+        
       } else {
-        console.log("Password doesn't match");
-        res.status(401).json({ error: "Password doesn't match" });
+        res.status(401).json({ error: "Wrong Password" });
       }
-    } else {
+    } else if (!user) {
       console.log("User doesn't exist");
       res.status(404).json({ error: "User doesn't exist" });
     }

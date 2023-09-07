@@ -28,7 +28,7 @@ app.get('/status', (req, res) => {
     res.status(200).json({ message: "OK" });
 });
 
-app.use('/user', UserRoute);
+app.use('/api/user', UserRoute);
 
 
 

@@ -1,23 +1,23 @@
 
-POST http://localhost:3000/user/createUser
+POST http://localhost:3000/api/user/createUser
 Content-Type: application/json
 
  {
-    "username": "Cappwawaejao@hotmail.com",
-    "password": "21821112"   
+    "username": "cas@hotmail.se",
+    "password": "123"   
 }
 
 
 ###
-POST http://localhost:3000/user/login
+POST http://localhost:3000/api/user/login
 Content-Type: application/json
 
 {
-    "username": "Kisdds@hotmail.com",
-    "password": "21821112"   
+    "username": "cas@hotmail.se",
+    "password": "123"   
 }
 
 ###
-GET http://localhost:3000/user/postsomething
+GET http://localhost:3000/api/user/postsomething
 
 ###
