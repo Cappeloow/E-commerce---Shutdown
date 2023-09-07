@@ -7,6 +7,8 @@ const app = express();
 const CLIENT_URL = "http://localhost:5173"
 
 const UserRoute = require('./user/userRoute');
+const ProductRoute = require('./products/productRoute');
+
 const cookieSession = require('cookie-session');
 
 
@@ -29,7 +31,7 @@ app.get('/status', (req, res) => {
 });
 
 app.use('/api/user', UserRoute);
-
+app.use('/api/products', ProductRoute);
 
 
 app.listen(3000, () => console.log('server is now open'));
