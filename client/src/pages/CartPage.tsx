@@ -6,11 +6,11 @@ type Props = {};
 
 function CartPage({}: Props) {
   return (
-    <div>
+    <>
       <Header />
       <CartMain />
       <Footer />
-    </div>
+    </>
   );
 }
 

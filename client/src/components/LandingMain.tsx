@@ -1,7 +1,7 @@
 import React from "react";
 import { useProductContext } from "../context/CartContext";
 type Props = {};
-
+import "./styles/Main.css";
 function LandingMain({}: Props) {
   const { products } = useProductContext();
   const { data } = products;

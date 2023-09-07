@@ -6,11 +6,11 @@ type Props = {};
 
 function LandingPage({}: Props) {
   return (
-    <div>
+    <>
       <Header />
       <LandingMain />
       <Footer />
-    </div>
+    </>
   );
 }
 
