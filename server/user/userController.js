@@ -89,6 +89,10 @@ const logIn = async (req, res) => {
   }
 };
 
+const logout = (req, res) => {
+req.session = null;
+res.status(200).json({message:"logout"})
+console.log(req.session);
+}
 
-
-module.exports = { logIn, createAccount };
+module.exports = { logIn, createAccount, logout };

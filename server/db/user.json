@@ -16,5 +16,11 @@
     "username": "jans@hotmail.se",
     "email": "jans@hotmail.se",
     "password": "$2b$10$tiFzE3dC7LCSD1XRDO7cUO7e22deIWgybwnlitH4WDsjjSyMUUNCO"
+  },
+  {
+    "id": "cus_ObCQeXsRiqVfqC",
+    "username": "dans@hotmail.se",
+    "email": "dans@hotmail.se",
+    "password": "$2b$10$ZFyXblsIfFUW2qJzC5gL9.dOXO49Qi/0CNW1N4LJHC5GJMHSTaaRW"
   }
 ]
