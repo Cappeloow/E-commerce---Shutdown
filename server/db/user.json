@@ -1,26 +1,23 @@
 [
   {
-    "id": "cus_ObCAEHeJjfHIns",
-    "username": "hans@hotmail.se",
-    "email": "hans@hotmail.se",
-    "password": "$2b$10$dt.wwgvZsL3cl.DI3PGya.9c/mRqOWFS6L6wL7r7jj/c7JIAQh05u"
+    "id": "cus_ObEqk1gYlM4QZz",
+    "username": "molle@hotmail.se",
+    "firstName": "molle",
+    "email": "molle@hotmail.se",
+    "password": "$2b$10$uPQEtzqOjLmLfYZgTEck0uznwRIYKt3Q0YS0ff5Z.vkz6FyHI4uMm"
   },
   {
-    "id": "cus_ObCAECWYDYJ5Xy",
-    "username": "kans@hotmail.se",
-    "email": "kans@hotmail.se",
-    "password": "$2b$10$tg9NzIJh1R3m0o5ScInDouN9O4mY2k7qi/CGrrdH.y..ufQU2ecFS"
+    "id": "cus_ObF1E3Xr0IjrPS",
+    "username": "casper@hotmail.com",
+    "firstName": "",
+    "email": "casper@hotmail.com",
+    "password": "$2b$10$FBaxUTWhuSbJz.2mbATUB.dDSm5whTxmBrpZ4Oc630A8/dE8ZejWm"
   },
   {
-    "id": "cus_ObCAaWIdHQ2dBc",
-    "username": "jans@hotmail.se",
-    "email": "jans@hotmail.se",
-    "password": "$2b$10$tiFzE3dC7LCSD1XRDO7cUO7e22deIWgybwnlitH4WDsjjSyMUUNCO"
-  },
-  {
-    "id": "cus_ObCQeXsRiqVfqC",
-    "username": "dans@hotmail.se",
-    "email": "dans@hotmail.se",
-    "password": "$2b$10$ZFyXblsIfFUW2qJzC5gL9.dOXO49Qi/0CNW1N4LJHC5GJMHSTaaRW"
+    "id": "cus_ObF2mCm0VGRvnt",
+    "username": "casper@live.se",
+    "firstName": "casperino",
+    "email": "casper@live.se",
+    "password": "$2b$10$kOoLtSaEvJmCflihV1hlLuuPF3yGmmKYhWUy7M0BAb0NBi5.1192e"
   }
 ]

@@ -14,7 +14,6 @@ const createAccount = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
 
-
     const userDataFilePath = path.join(__dirname, '../db/user.json'); 
     const existingUserData = JSON.parse(fs.readFileSync(userDataFilePath, 'utf-8'));
     if (!fs.existsSync(userDataFilePath)) {
@@ -32,11 +31,11 @@ const createAccount = async (req, res) => {
             email:username,
           });
 
-          console.log(customer);
           
           const newUser = {
             id:customer.id,
             username,
+            firstName:firstName,
             email:username,
             password: hashedPassword,
           };
