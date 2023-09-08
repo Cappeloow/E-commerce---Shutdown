@@ -1,6 +1,7 @@
 import React from "react";
 import { useProductContext } from "../context/CartContext";
 type Props = {};
+import ProductCard from "./ProductCard";
 import "./styles/Main.css";
 function LandingMain({}: Props) {
   const { products } = useProductContext();
@@ -11,7 +12,7 @@ function LandingMain({}: Props) {
       {data &&
         data.map((product, index) => (
           <div key={index}>
-            <h1>{product.name}</h1>
+            <ProductCard product={product} />
           </div>
         ))}
     </main>
