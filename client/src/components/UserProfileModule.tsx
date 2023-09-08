@@ -6,24 +6,28 @@ type Props = {
 };
 
 const UserProfileModule = ({ setUserProfile }: Props) => {
-  const { loginUser } = useUserContext();
+  const { loginUser, logoutUser } = useUserContext();
   useEffect(() => {
     if (loginUser) {
       console.log(loginUser);
     }
   });
-  return (
-    <dialog className="UserProfileDialogBox" open>
-      {loginUser ? (
-        <>
-          <p onClick={() => setUserProfile(false)}>x</p>
-          <h1>{loginUser.firstName}</h1>
-          <p>{loginUser.email}</p>
-          <button>Logout</button>
-        </>
-      ) : null}
-    </dialog>
-  );
+
+  const handleClick = () => {
+    console.log("clicker");
+    logoutUser();
+  };
+
+  return loginUser ? (
+    <>
+      <dialog className="UserProfileDialogBox" open>
+        <p onClick={() => setUserProfile(false)}>x</p>
+        <h1>{loginUser.firstName}</h1>
+        <p>{loginUser.email}</p>
+        <button onClick={handleClick}>Logout</button>
+      </dialog>
+    </>
+  ) : null;
 };
 
 export default UserProfileModule;

@@ -64,16 +64,19 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
   }
 
   async function logoutUser() {
+    console.log("he4j");
     try {
-      const response = await fetch("/api/users/logout", {
+      const response = await fetch("/api/user/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({}),
       });
-      if (response.status === 204) {
+      console.log(response);
+      if (response.status === 200) {
         setLoginUser(null);
+        console.log(loginUser);
       } else {
         const data = await response.json();
         return data;
@@ -89,7 +92,7 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
         if (loginUser) {
           console.log("is logged in");
         } else {
-          const response = await fetch("/api/users/authorize");
+          const response = await fetch("/api/user/authorize");
           if (response.status === 200) {
             const data = await response.json();
             setLoginUser(data);
