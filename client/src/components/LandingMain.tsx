@@ -1,5 +1,5 @@
 import React from "react";
-import { useProductContext } from "../context/CartContext";
+import { useProductContext } from "../context/ProductContext";
 type Props = {};
 import ProductCard from "./ProductCard";
 import "./styles/Main.css";
