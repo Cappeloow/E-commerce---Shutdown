@@ -5,28 +5,28 @@ type Props = {
 };
 
 function LoginDialog({ setLoginIsOpen }: Props) {
-  const { fetchLoginUser } = useUserContext();
+  const { fetchLoginUser, loginUser } = useUserContext();
 
-  // Define state variables for the dialog and credentials
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
 
-  // Handle form submission
   const handleSubmit = async (e) => {
-    console.log(credentials);
     e.preventDefault();
-
-    console.log("Email:", credentials.email);
-    console.log("Password:", credentials.password);
-
     await fetchLoginUser(credentials);
+
+    if (loginUser) {
+      setCredentials({ ...credentials, email: "" });
+      setCredentials({ ...credentials, password: "" });
+    }
   };
 
-  // useEffect(() => {
-  //   console.log(credentials);
-  // }, [credentials]);
+  useEffect(() => {
+    if (loginUser) {
+      setLoginIsOpen(false);
+    }
+  }, [loginUser]);
 
   return (
     <dialog open>
