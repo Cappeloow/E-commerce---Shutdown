@@ -8,7 +8,7 @@ function LoginDialog({ setLoginIsOpen }: Props) {
   const { fetchLoginUser, loginUser } = useUserContext();
 
   const [credentials, setCredentials] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -17,7 +17,7 @@ function LoginDialog({ setLoginIsOpen }: Props) {
     await fetchLoginUser(credentials);
 
     if (loginUser) {
-      setCredentials({ ...credentials, email: "" });
+      setCredentials({ ...credentials, username: "" });
       setCredentials({ ...credentials, password: "" });
     }
   };
@@ -36,9 +36,9 @@ function LoginDialog({ setLoginIsOpen }: Props) {
         <input
           placeholder="email"
           type="text"
-          value={credentials.email}
+          value={credentials.username}
           onChange={(e) =>
-            setCredentials({ ...credentials, email: e.target.value })
+            setCredentials({ ...credentials, username: e.target.value })
           }
         />
         <input

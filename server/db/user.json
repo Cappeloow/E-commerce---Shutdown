@@ -1,87 +1,20 @@
 [
   {
-    "username": "Kisdds@hotmail.com",
-    "password": "$2b$10$zt94ILNVRSizxcL2nyvYv.8fdt0mkHZr01tZGNNT6VkKN4nlgGr3y"
+    "id": "cus_ObCAEHeJjfHIns",
+    "username": "hans@hotmail.se",
+    "email": "hans@hotmail.se",
+    "password": "$2b$10$dt.wwgvZsL3cl.DI3PGya.9c/mRqOWFS6L6wL7r7jj/c7JIAQh05u"
   },
   {
-    "username": "Cappe@hotmail.com",
-    "password": "$2b$10$QE64eT2abVkj5ZeIQ2V4tuI/AoPc0NCZaWuQCOvOtQTcX7DS9pGW."
+    "id": "cus_ObCAECWYDYJ5Xy",
+    "username": "kans@hotmail.se",
+    "email": "kans@hotmail.se",
+    "password": "$2b$10$tg9NzIJh1R3m0o5ScInDouN9O4mY2k7qi/CGrrdH.y..ufQU2ecFS"
   },
   {
-    "username": "Cappe1996@hotmail.com",
-    "password": "$2b$10$BZ8LzjkzVPB0vfU1kxH5/eiF8pjUwPIiqc8Q6y13Zn.AZzg2sOAtq"
-  },
-  {
-    "username": "Casper@hotmail.com",
-    "password": "$2b$10$ISAgEZcQ8y8auQ/5n/mDfOrFb66azvXTOzRMG60YM5MZpSTXSobKi"
-  },
-  {
-    "username": "Cappejao@hotmail.com",
-    "password": "$2b$10$pQlDRIRDz4YaWdoGW7TtZer2JLk2Q4.cYz1q9dWoxodSLKO5tAD/C"
-  },
-  {
-    "username": "Cappwawaejao@hotmail.com",
-    "password": "$2b$10$RvbpnxrN1lvgKDJSoBPxHORi05AcDdoJMl3oGsiW7PbWoEUkc56Aa",
-    "id": "cus_OaVjsmLOLc64mC"
-  },
-  {
-    "username": "admin@hotmail.se",
-    "password": "$2b$10$R12bw55sqxcBWne1C91pzucSg6lHgxztT1eeV6X/slRrqCyVPBaum"
-  },
-  {
-    "id": "cus_OangYUArhLvpd1",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$K3PFQs98Kg5zJM0Rbvj/auGM0bjGEFhAaU/GvrJX5llzxtLhu/S0O"
-  },
-  {
-    "id": "cus_OaoCSy3Yx1oi5A",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$bQel885qwk/m5ACWqRNb5.G.9.8RnREh0SHLgdxXsYRQYczhTCXMu"
-  },
-  {
-    "id": "cus_OaofrCDnqanKob",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$1GQwMq6xx7f.wEOnqE4CM.39B7pS8QsfDscfrkPaMfQD8s6Cxblja"
-  },
-  {
-    "id": "cus_Oaog2uEPGS9Av6",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$WJfmlYwy5AF5BlBf4eg2weDiiDhKl74TCd1L833PLwhQ6uA9OYNNC"
-  },
-  {
-    "id": "cus_OaogeszlR1bRbf",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$J9.2/XQskLm9V.QQNo5aKePpqG73X2/8n7H4jayNtOYZp.AGt4P3S"
-  },
-  {
-    "id": "cus_OaogU5W3Mnpskh",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$d0jx1jnU/JJe4ZWU8ENkveaQB7P8U.6eV41RdOXohCX11WQzSlAjC"
-  },
-  {
-    "id": "cus_OaohOq3VRpD37F",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$bqXkxXYEM4HLUddey0yy2.aeClOl9nbumlkbgg877FWjJKB8kgYte"
-  },
-  {
-    "id": "cus_Oaoif6rrGnJpnG",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$0VyY.31nF1EZkKFCsyJVVeAisQz0neA8D5HVdTh.dToODxEIBVDFu"
-  },
-  {
-    "id": "cus_Oaoi1CHitJ0WUn",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$9r9pcO8RD/kWs/ou5YJXpuj7UKzsv2W7TysGhiPRs1lms8m2iDwVO"
-  },
-  {
-    "id": "cus_OaoilsQswAGLE4",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$nACUcj2psZlp8ryBRLDxXuhR7Jt.hlT6GIASnUdnugNlyR3eufbgy"
-  },
-  {
-    "id": "cus_OaojmxdzbeOXXt",
-    "username": "cas@hotmail.se",
-    "email": "cas@hotmail.se",
-    "password": "$2b$10$jBEmb5Obd.conVLLgmS9BeGeLx6UnPhrxboMx/90PwVkT7/uQQNty"
+    "id": "cus_ObCAaWIdHQ2dBc",
+    "username": "jans@hotmail.se",
+    "email": "jans@hotmail.se",
+    "password": "$2b$10$tiFzE3dC7LCSD1XRDO7cUO7e22deIWgybwnlitH4WDsjjSyMUUNCO"
   }
 ]
