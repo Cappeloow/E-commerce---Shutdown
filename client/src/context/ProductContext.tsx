@@ -29,10 +29,12 @@ const ProductProvider = ({ children }: PropsWithChildren) => {
   const [products, setProducts] = useState<IProduct[]>([]);
 
   async function fetchProducts() {
+    console.log("we are here");
     try {
       const response = await fetch("/api/products/getAllProducts");
       const data = await response.json();
       setProducts(data);
+      console.log(data);
     } catch (error) {
       console.log(error);
     }

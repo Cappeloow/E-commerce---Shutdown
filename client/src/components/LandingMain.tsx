@@ -5,12 +5,12 @@ import ProductCard from "./ProductCard";
 import "./styles/Main.css";
 function LandingMain({}: Props) {
   const { products } = useProductContext();
-  const { data } = products;
+  console.log(products);
 
   return (
-    <main>
-      {data &&
-        data.map((product, index) => (
+    <main className="allProductsContainer">
+      {products &&
+        products.map((product, index) => (
           <div key={index}>
             <ProductCard product={product} />
           </div>
