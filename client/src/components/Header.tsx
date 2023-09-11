@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-type Props = {};
+import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import { useUserContext } from "../context/UserContext";
@@ -10,6 +10,7 @@ import UserProfileModule from "./UserProfileModule";
 import { useCartContext } from "../context/CartContext";
 function Header({}: Props) {
   const { cart } = useCartContext();
+  const navigate = useNavigate();
   const { loginUser } = useUserContext();
   const [isRegisterOpen, setRegisterIsOpen] = useState(false);
   const [isLoginOpen, setLoginIsOpen] = useState(false);
@@ -31,11 +32,17 @@ function Header({}: Props) {
     }
   };
 
+  function navigateToCart() {
+    console.log(cart);
+    if (cart.length >= 1) {
+      navigate("/cart");
+    }
+  }
   return (
     <header>
       <h1>This is my header</h1>
       <p>
-        <AiOutlineShoppingCart />
+        <AiOutlineShoppingCart onClick={navigateToCart} />
       </p>
       <p>{cart.length >= 1 ? <p>{cart.length}</p> : null}</p>
       {!loginUser ? (
