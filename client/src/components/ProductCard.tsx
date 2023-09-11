@@ -1,8 +1,10 @@
 import React from "react";
 import "./styles/ProductCard.css";
+import { useCartContext } from "../context/CartContext";
 type Props = {};
 
 function ProductCard({ product }: any) {
+  const { addProductToCart } = useCartContext();
   console.log(product);
   return (
     <div className="productContainer">
@@ -11,6 +13,7 @@ function ProductCard({ product }: any) {
       </div>
       <h4>{product.name}</h4>
       <p>{product.price} kr</p>
+      <button onClick={() => addProductToCart(product)}>BUY</button>
     </div>
   );
 }

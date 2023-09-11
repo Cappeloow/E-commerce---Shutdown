@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
 import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 type Props = {};
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import { useUserContext } from "../context/UserContext";
 import UserProfileModule from "./UserProfileModule";
+import { useCartContext } from "../context/CartContext";
 function Header({}: Props) {
+  const { cart } = useCartContext();
   const { loginUser } = useUserContext();
   const [isRegisterOpen, setRegisterIsOpen] = useState(false);
   const [isLoginOpen, setLoginIsOpen] = useState(false);
@@ -31,6 +34,10 @@ function Header({}: Props) {
   return (
     <header>
       <h1>This is my header</h1>
+      <p>
+        <AiOutlineShoppingCart />
+      </p>
+      <p>{cart.length >= 1 ? <p>{cart.length}</p> : null}</p>
       {!loginUser ? (
         <>
           <button onClick={() => handleOpen("login")}>Login</button>
