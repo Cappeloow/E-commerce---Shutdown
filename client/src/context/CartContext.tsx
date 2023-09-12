@@ -8,7 +8,6 @@ import {
 import { IProduct } from "./ProductContext";
 export interface ICart {
   products: IProduct[];
-  quantity: number;
 }
 
 interface ICartContext {
@@ -28,12 +27,19 @@ const CartProvider = ({ children }: PropsWithChildren) => {
 
   const addProductToCart = (product) => {
     setCart((prevCart) => {
-      if (prevCart.length === 0) {
-        return [product];
+      const existingProductIndex = prevCart.findIndex(
+        (item) => item.id === product.id
+      );
+
+      if (existingProductIndex !== -1) {
+        const updatedCart = [...prevCart];
+        updatedCart[existingProductIndex].quantity += 1;
+        return updatedCart;
       } else {
-        return [...prevCart, product];
+        return [...prevCart, { ...product, quantity: 1 }];
       }
     });
+    console.log(cart);
   };
 
   return (

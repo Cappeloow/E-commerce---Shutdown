@@ -1,11 +1,12 @@
 import React from "react";
 import "./styles/ProductCard.css";
 import { useCartContext } from "../context/CartContext";
-type Props = {};
 
 function ProductCard({ product }: any) {
   const { addProductToCart } = useCartContext();
-  console.log(product);
+
+  const handleCartPage = !window.location.href.includes("localhost:5173/cart");
+
   return (
     <div className="productContainer">
       <div className="productImgContainer">
@@ -13,7 +14,11 @@ function ProductCard({ product }: any) {
       </div>
       <h4>{product.name}</h4>
       <p>{product.price} kr</p>
-      <button onClick={() => addProductToCart(product)}>BUY</button>
+      {handleCartPage ? (
+        <button onClick={() => addProductToCart(product)}>BUY</button>
+      ) : (
+        <p>Antal:{product.quantity}</p>
+      )}
     </div>
   );
 }

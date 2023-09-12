@@ -8,6 +8,7 @@ import {
 
 export interface IProduct {
   _id: number;
+  quantity: number;
   title: string;
   image: string;
   price: number;
