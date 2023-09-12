@@ -38,13 +38,19 @@ function Header({}: Props) {
       navigate("/cart");
     }
   }
+
+  const totalQuantityInCart = () => {
+    const totalQuant = cart.reduce((sum, item) => sum + item.quantity, 0);
+    return totalQuant.toString();
+  };
+
   return (
     <header>
       <h1>This is my header</h1>
       <p>
         <AiOutlineShoppingCart onClick={navigateToCart} />
       </p>
-      <p>{cart.length >= 1 ? <p>{cart.length}</p> : null}</p>
+      <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
       {!loginUser ? (
         <>
           <button onClick={() => handleOpen("login")}>Login</button>
