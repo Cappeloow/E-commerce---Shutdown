@@ -1,8 +1,29 @@
 import ProductCard from "./ProductCard";
 import { useCartContext } from "../context/CartContext";
+import { useEffect } from "react";
 
 function CartMain() {
   const { cart } = useCartContext();
+
+  useEffect(() => {
+    console.log(cart);
+  }, []);
+
+  const handlePayment = async () => {
+    console.log(cart);
+    const response = await fetch("api/checkout/create-checkout-session", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cart),
+    });
+    if (!response.ok) {
+      return;
+    }
+    const { url } = await response.json();
+    window.location = url;
+  };
 
   const totalSum = () => {
     const totalPrice = cart.reduce(
@@ -21,7 +42,7 @@ function CartMain() {
           </div>
         ))}
       <p>Totala kostnaden: {totalSum()} kr</p>
-      <button>Checkout</button>
+      <button onClick={handlePayment}>GE MIG PENGAR</button>
     </main>
   );
 }
