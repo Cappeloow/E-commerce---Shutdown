@@ -1,10 +1,13 @@
 import ProductCard from "./ProductCard";
+import LoginForm from "../components/LoginForm";
+import { useState } from "react";
 import { useCartContext } from "../context/CartContext";
 import { useEffect } from "react";
-
+import { useUserContext } from "../context/UserContext";
 function CartMain() {
+  const [isLoginOpen, setLoginIsOpen] = useState(false);
   const { cart } = useCartContext();
-
+  const { loginUser } = useUserContext();
   useEffect(() => {
     console.log(cart);
   }, []);
@@ -33,6 +36,10 @@ function CartMain() {
     return totalPrice;
   };
 
+  const handleOpen = (type: string) => {
+    setLoginIsOpen(true);
+  };
+
   return (
     <main className="allProductsContainer">
       {cart &&
@@ -42,7 +49,15 @@ function CartMain() {
           </div>
         ))}
       <p>Totala kostnaden: {totalSum()} kr</p>
-      <button onClick={handlePayment}>GE MIG PENGAR</button>
+      {loginUser ? (
+        <button onClick={handlePayment}>Betala</button>
+      ) : (
+        <>
+          <button onClick={() => handleOpen("login")}>Login</button>
+          {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
+          <button disabled>Betala</button>
+        </>
+      )}
     </main>
   );
 }
