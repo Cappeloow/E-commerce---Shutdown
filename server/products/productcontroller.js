@@ -18,7 +18,6 @@ async function getAllProducts(req, res) {
   
         updatedProducts.push(product);
       }
-      console.log(updatedProducts);
       res.status(200).json(updatedProducts);
     } catch (error) {
       console.error('Error fetching products:', error);

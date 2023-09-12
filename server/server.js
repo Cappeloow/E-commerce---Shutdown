@@ -6,6 +6,7 @@ const cors = require('cors');
 const app = express();
 const CLIENT_URL = "http://localhost:5173"
 
+const CheckoutRoute = require('./checkout/checkoutRoute');
 const UserRoute = require('./user/userRoute');
 const ProductRoute = require('./products/productRoute');
 
@@ -32,6 +33,6 @@ app.get('/status', (req, res) => {
 
 app.use('/api/user', UserRoute);
 app.use('/api/products', ProductRoute);
-
+app.use('/api/checkout', CheckoutRoute);
 
 app.listen(3000, () => console.log('server is now open'));

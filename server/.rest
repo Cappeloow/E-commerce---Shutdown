@@ -33,3 +33,16 @@ GET http://localhost:3000/api/user/postsomething
 
 
 GET http://localhost:3000/api/products/getAllProducts
+
+
+### 
+POST http://localhost:3000/api/checkout/create-checkout-session
+Content-Type: application/json
+
+{
+}
+
+####
+
+
+GET http://localhost:3000/api/checkout/test
