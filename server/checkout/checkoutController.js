@@ -4,8 +4,12 @@ const stripe = initStripe();
 const MY_DOMAIN = "http://localhost:5173";
 
 async function stripeCheckout(req, res) {
-  console.log(req.body);
+
   const cart = req.body;
+  const user =  req.session.user
+
+
+  console.log(user);
 
   const line_items = cart.map((item) => ({
     price_data: {
@@ -19,13 +23,17 @@ async function stripeCheckout(req, res) {
     quantity: item.quantity,
   }));
 
+
+
   try {
     const session = await stripe.checkout.sessions.create({
         line_items,
+        customer:user.id,
         mode:"payment",
         success_url:`${MY_DOMAIN}/confirmation`,
         cancel_url:MY_DOMAIN,
     })
+    console.log("this is the session:", session);
     res.status(200).json({url:session.url});
 } catch (error) {
     console.log(error.message);

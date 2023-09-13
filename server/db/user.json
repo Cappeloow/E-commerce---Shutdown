@@ -19,5 +19,18 @@
     "firstName": "casperino",
     "email": "casper@live.se",
     "password": "$2b$10$kOoLtSaEvJmCflihV1hlLuuPF3yGmmKYhWUy7M0BAb0NBi5.1192e"
+  },
+  {
+    "id": "cus_Od2bONdTtgx56l",
+    "username": "Jocke@hotmail.com",
+    "email": "Jocke@hotmail.com",
+    "password": "$2b$10$wMqmAHyXT27oYXgINfj1M.rJUzE/goWWq3kfAeLon/oHZ6M3L.soe"
+  },
+  {
+    "id": "cus_Od2eFadd4b3Q5k",
+    "username": "w@hotmail.com",
+    "name": "w",
+    "email": "w@hotmail.com",
+    "password": "$2b$10$A1TooQrdZyyeljAOKebRX.R4EER/ZJf4svMuPrSj5K/qbq3pdsxOy"
   }
 ]

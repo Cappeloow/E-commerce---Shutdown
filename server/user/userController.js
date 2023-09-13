@@ -10,7 +10,7 @@ const stripe = initStripe();
 
 const createAccount = async (req, res) => {
   try {
-    const { username, password, firstName } = req.body;
+    const { username, password, name } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
 
 
@@ -27,7 +27,7 @@ const createAccount = async (req, res) => {
  
 
           const customer = await stripe.customers.create({
-            name:firstName,
+            name:name,
             email:username,
           });
 
@@ -35,7 +35,7 @@ const createAccount = async (req, res) => {
           const newUser = {
             id:customer.id,
             username,
-            firstName:firstName,
+            name:name,
             email:username,
             password: hashedPassword,
           };

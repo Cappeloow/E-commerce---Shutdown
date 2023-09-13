@@ -3,13 +3,13 @@ import { useState } from "react";
 interface registerUser {
   username: string;
   password: string;
-  firstName: string;
+  name: string;
 }
 
 const defaultCreateCustomerValues = {
   username: "",
   password: "",
-  firstName: "",
+  name: "",
 };
 
 type Props = {
@@ -67,9 +67,7 @@ function RegisterForm({ setRegisterIsOpen }: Props) {
         <input
           placeholder="namn"
           type="text"
-          onChange={(e) =>
-            setCustomer({ ...customer, firstName: e.target.value })
-          }
+          onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
         />
         <button onClick={registerCustomer}>Skapa</button>
       </form>
