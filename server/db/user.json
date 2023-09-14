@@ -39,5 +39,19 @@
     "name": "k",
     "email": "k@hotmail.com",
     "password": "$2b$10$Lm/clUJuIuhG9ES03lmRYOzGvs8IzLRiKC0Ch.Dglp31IYGEGnI66"
+  },
+  {
+    "id": "cus_OdXu8OxSZ9R4Pl",
+    "username": "hej@hotmail.com",
+    "name": "hej",
+    "email": "hej@hotmail.com",
+    "password": "$2b$10$Ad0Y3TGkqnc1hXrLwCuc0.UufWzHVXXUI.8sHbkE22dydq1eVlZHi"
+  },
+  {
+    "id": "cus_OdY2x6WpU05jSQ",
+    "username": "cas@hotmail.com",
+    "name": "cas",
+    "email": "cas@hotmail.com",
+    "password": "$2b$10$dBaO6QZpj2EknQCDMzzLz.iyZ7qBjtE07X6H.WsojfCBGrKxIsEoO"
   }
 ]

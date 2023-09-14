@@ -94,4 +94,14 @@ res.status(200).json({message:"logout"})
 console.log(req.session);
 }
 
-module.exports = { logIn, createAccount, logout };
+async function authorize(req, res) {
+  console.log(req.session);
+  if (!req.session.user.id) {
+    return res.status(401).json("You are not logged in");
+  }
+  res.status(200).json(req.session);
+}
+
+
+
+module.exports = { authorize, logIn, createAccount, logout };
