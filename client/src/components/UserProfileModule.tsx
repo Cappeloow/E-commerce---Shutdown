@@ -9,7 +9,7 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
   const { loginUser, logoutUser } = useUserContext();
   useEffect(() => {
     if (loginUser) {
-      console.log(loginUser);
+      console.log(loginUser.user);
     }
   });
 
@@ -22,8 +22,8 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
     <>
       <dialog className="UserProfileDialogBox" open>
         <p onClick={() => setUserProfile(false)}>x</p>
-        <h1>{loginUser.firstName}</h1>
-        <p>{loginUser.email}</p>
+        <h1>{loginUser.user.name}</h1>
+        <p>{loginUser.user.email}</p>
         <button onClick={handleClick}>Logout</button>
       </dialog>
     </>
