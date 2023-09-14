@@ -42,9 +42,22 @@ async function stripeCheckout(req, res) {
 }
 
 
-function verifyConfirmation (req,res) {
-res.status(200).json("get in here");
-//retrieve the order
+
+async function verifyConfirmation(req, res) {
+  const { id } = req.body; 
+
+  try {
+    const retrieveConfirmation = await stripe.checkout.sessions.retrieve(id);
+   const lineItems = await stripe.checkout.sessions.listLineItems(id);
+
+   // save the orders into the db (json file);
+
+    console.log("this is the line items:",  lineItems);
+    res.status(200).json({retrieveConfirmation, lineItems} );
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong while retrieving the order.' });
+  }
 }
 
 module.exports = {stripeCheckout, verifyConfirmation};

@@ -32,5 +32,12 @@
     "name": "w",
     "email": "w@hotmail.com",
     "password": "$2b$10$A1TooQrdZyyeljAOKebRX.R4EER/ZJf4svMuPrSj5K/qbq3pdsxOy"
+  },
+  {
+    "id": "cus_OdXaqaNUu2Wndl",
+    "username": "k@hotmail.com",
+    "name": "k",
+    "email": "k@hotmail.com",
+    "password": "$2b$10$Lm/clUJuIuhG9ES03lmRYOzGvs8IzLRiKC0Ch.Dglp31IYGEGnI66"
   }
 ]

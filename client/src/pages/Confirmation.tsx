@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import { useUserContext } from "../context/UserContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function Confirmation() {
   const [confirmation, setConfirmation] = useState(null);
   const [items, setItems] = useState(null);
+  const { loginUser } = useUserContext();
   useEffect(() => {
     const retrieveConfirmation = async () => {
       const id = localStorage.getItem("session-id");
