@@ -24,7 +24,8 @@ function CartMain() {
     if (!response.ok) {
       return;
     }
-    const { url } = await response.json();
+    const { url, id } = await response.json();
+    localStorage.setItem("session-id", id);
     window.location = url;
   };
 

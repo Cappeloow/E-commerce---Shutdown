@@ -34,12 +34,18 @@ async function stripeCheckout(req, res) {
         cancel_url:MY_DOMAIN,
     })
     console.log("this is the session:", session);
-    res.status(200).json({url:session.url});
+    res.status(200).json({url:session.url, id:session.id});
 } catch (error) {
     console.log(error.message);
     res.status(400).json("Det gick inte bra");
 }
 }
 
-module.exports = stripeCheckout;
+
+function verifyConfirmation (req,res) {
+res.status(200).json("get in here");
+//retrieve the order
+}
+
+module.exports = {stripeCheckout, verifyConfirmation};
 

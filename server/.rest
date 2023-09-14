@@ -46,3 +46,10 @@ Content-Type: application/json
 
 
 GET http://localhost:3000/api/checkout/test
+
+### 
+POST http://localhost:3000/api/checkout/confirmation
+Content-Type: application/json
+
+{
+}
