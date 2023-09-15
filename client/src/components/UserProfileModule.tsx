@@ -22,8 +22,8 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
     <>
       <dialog className="UserProfileDialogBox" open>
         <p onClick={() => setUserProfile(false)}>x</p>
-        <h1>{loginUser.user.name}</h1>
-        <p>{loginUser.user.email}</p>
+        <h1>{loginUser.name}</h1>
+        <p>{loginUser.email}</p>
         <button onClick={handleClick}>Logout</button>
       </dialog>
     </>

@@ -6,7 +6,7 @@ const MY_DOMAIN = "http://localhost:5173";
 async function stripeCheckout(req, res) {
 
   const cart = req.body;
-  const user =  req.session.user
+  const user =  req.session
 
 
   console.log(user);

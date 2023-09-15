@@ -32,6 +32,8 @@ function Confirmation() {
     };
 
     retrieveConfirmation();
+
+    localStorage.removeItem("session-id");
   }, []);
 
   return (
@@ -42,14 +44,14 @@ function Confirmation() {
           <div>
             <p>
               Thank you for the purchase {confirmation.customer_details.name}!
-              {items.data.map((product) => (
-                <div key={product.id}>
-                  <p>
-                    {product.quantity} x {product.description}
-                  </p>
-                </div>
-              ))}
             </p>
+            {items.data.map((product) => (
+              <div key={product.id}>
+                <p>
+                  {product.quantity} x {product.description}
+                </p>
+              </div>
+            ))}
             <p>
               Total Summa:
               {confirmation.amount_total / 100} kr

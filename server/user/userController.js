@@ -72,7 +72,7 @@ const logIn = async (req, res) => {
 
       if (match) {
         console.log("this is the user", user);
-        req.session.user = user;
+        req.session = user;
         res.status(200).json(user)
         
       } else {
@@ -96,7 +96,7 @@ console.log(req.session);
 
 async function authorize(req, res) {
   console.log(req.session);
-  if (!req.session.user.id) {
+  if (!req.session.id) {
     return res.status(401).json("You are not logged in");
   }
   res.status(200).json(req.session);
