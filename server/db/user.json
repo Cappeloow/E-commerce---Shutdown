@@ -53,5 +53,12 @@
     "name": "cas",
     "email": "cas@hotmail.com",
     "password": "$2b$10$dBaO6QZpj2EknQCDMzzLz.iyZ7qBjtE07X6H.WsojfCBGrKxIsEoO"
+  },
+  {
+    "id": "cus_OdnRvfkehnhoh5",
+    "username": "hakan@hotmail.com",
+    "name": "håkan",
+    "email": "hakan@hotmail.com",
+    "password": "$2b$10$/TkY0Q8W2GFtmQ4zDze2r.JsD/3GntVmJm8grJec06w2gxxFS48qu"
   }
 ]

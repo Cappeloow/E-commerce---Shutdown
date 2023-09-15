@@ -1,0 +1,38 @@
+[
+  {
+    "email": "cas@hotmail.com",
+    "name": "cas",
+    "orderedItems": [
+      {
+        "product": "New Röd Keps - Callaway",
+        "quantity": 2,
+        "totalSum": 39800
+      }
+    ]
+  },
+  {
+    "orderedItems": [
+      {
+        "product": "New Röd Keps - Callaway",
+        "quantity": 2,
+        "totalSum": 39800
+      }
+    ]
+  },
+  {
+    "email": "hakan@hotmail.com",
+    "name": "håkan",
+    "orderedItems": [
+      {
+        "product": "New Röd Keps - Callaway",
+        "quantity": 3,
+        "totalSum": 59700
+      },
+      {
+        "product": "New Keps - Brooklyn - Svart",
+        "quantity": 1,
+        "totalSum": 14900
+      }
+    ]
+  }
+]

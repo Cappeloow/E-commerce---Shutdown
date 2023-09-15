@@ -32,8 +32,6 @@ function Confirmation() {
     };
 
     retrieveConfirmation();
-
-    localStorage.removeItem("session-id");
   }, []);
 
   return (
