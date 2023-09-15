@@ -53,7 +53,7 @@ async function verifyConfirmation(req, res) {
     const deconstructedLineItems = lineItems.data.map((product) => ({
       product: product.description,
       quantity: product.quantity,
-      totalSum: product.amount_total,
+      totalSum: product.amount_total/100,
     }));
 
     const newOrder = {
