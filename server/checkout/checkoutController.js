@@ -10,7 +10,6 @@ async function stripeCheckout(req, res) {
   const user =  req.session
 
 
-  console.log(user);
 
   const line_items = cart.map((item) => ({
     price_data: {
@@ -34,7 +33,6 @@ async function stripeCheckout(req, res) {
         success_url:`${MY_DOMAIN}/confirmation`,
         cancel_url:MY_DOMAIN,
     })
-    console.log("this is the session:", session);
     res.status(200).json({url:session.url, id:session.id});
 } catch (error) {
     console.log(error.message);
@@ -49,7 +47,7 @@ async function verifyConfirmation(req, res) {
   try {
     const retrieveConfirmation = await stripe.checkout.sessions.retrieve(id);
     const lineItems = await stripe.checkout.sessions.listLineItems(id);
-
+    console.log("THIS IS THE ACTUAL INFORMATION FROM THE LATEST ORDER:",retrieveConfirmation);
     const deconstructedLineItems = lineItems.data.map((product) => ({
       product: product.description,
       quantity: product.quantity,
@@ -57,25 +55,22 @@ async function verifyConfirmation(req, res) {
     }));
 
     const newOrder = {
+      orderId:retrieveConfirmation.id,
       email: req.session.email,
       name: req.session.name,
       orderedItems: deconstructedLineItems,
     };
 
-    // Use an absolute path to the orders.json file
     const ordersFilePath = path.join(__dirname, '..', 'db', 'orders.json');
 
-    // Read the existing orders
+    // readFIle
     const existingOrders = fs.readFileSync(ordersFilePath, 'utf-8');
     const orders = JSON.parse(existingOrders);
 
-    // Add the new order to the orders array
     orders.push(newOrder);
 
-    // Write the updated orders array back to the file
+    // writeFile
     fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2));
-
-    console.log("This is the line items:", lineItems);
     res.status(200).json({ retrieveConfirmation, lineItems });
   } catch (error) {
     console.error(error);

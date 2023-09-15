@@ -14,7 +14,7 @@ POST http://localhost:3000/api/user/login
 Content-Type: application/json
 
 {
-    "username": "jans@hotmail.se",
+    "username": "cas@hotmail.com",
     "password": "123"   
 }
 ####

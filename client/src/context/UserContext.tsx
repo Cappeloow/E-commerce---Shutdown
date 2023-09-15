@@ -13,7 +13,7 @@ export interface Credentials {
 
 export interface User {
   id: string;
-  firstName: string;
+  name: string;
   email: string;
   password: string;
 }

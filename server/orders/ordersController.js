@@ -12,8 +12,8 @@ function getMyOrders (req,res) {
     const existingOrders = fs.readFileSync(ordersFilePath, 'utf-8');
     const orders = JSON.parse(existingOrders);
 
-
-    const myOrders = orders.find((order) => order.email === req.session.email)
+        
+    const myOrders = orders.filter((order) => order.email === req.session.email);
         
     if (!myOrders) {
         res.status(400).json({message:"There is no placed orders"});

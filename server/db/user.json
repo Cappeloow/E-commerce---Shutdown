@@ -60,5 +60,12 @@
     "name": "håkan",
     "email": "hakan@hotmail.com",
     "password": "$2b$10$/TkY0Q8W2GFtmQ4zDze2r.JsD/3GntVmJm8grJec06w2gxxFS48qu"
+  },
+  {
+    "id": "cus_OdoMayvTB2ejCY",
+    "username": "lolo@hotmail.com",
+    "name": "lolo",
+    "email": "lolo@hotmail.com",
+    "password": "$2b$10$VogBgdM/t2/c5SSU5Asx5uZmfoLFtCVkDoZlEhAHoyhtyEFMHSJH."
   }
 ]
