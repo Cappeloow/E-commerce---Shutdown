@@ -8,14 +8,25 @@ function LandingMain({}: Props) {
   console.log(products);
 
   return (
-    <main className="allProductsContainer">
-      {products &&
-        products.map((product, index) => (
-          <div key={index}>
-            <ProductCard product={product} />
-          </div>
-        ))}
-    </main>
+    <>
+      <div className="HeroSection">
+        <h1>S H U T D O W N</h1>
+        <p>GET YOUR CAP AND TAKE A NAP</p>
+      </div>
+
+      <div className="Shop">
+        <h1>Our Cap's</h1>
+      </div>
+
+      <main className="allProductsContainer">
+        {products &&
+          products.map((product, index) => (
+            <div key={index}>
+              <ProductCard product={product} />
+            </div>
+          ))}
+      </main>
+    </>
   );
 }
 

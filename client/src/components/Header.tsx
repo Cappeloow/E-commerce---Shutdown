@@ -46,28 +46,33 @@ function Header({}: Props) {
 
   return (
     <header>
-      <h1>This is my header</h1>
-      <p>
-        <AiOutlineShoppingCart onClick={navigateToCart} />
-      </p>
-      <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
-      {!loginUser ? (
-        <>
-          <button onClick={() => handleOpen("login")}>Login</button>
-          <p onClick={() => handleOpen("register")}>register</p>
-        </>
-      ) : (
-        <button onClick={() => handleOpen("UserProfile")}>
-          <AiOutlineUser />
-        </button>
-      )}
-      {isRegisterOpen ? (
-        <RegisterForm setRegisterIsOpen={setRegisterIsOpen} />
-      ) : null}
-      {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
-      {userProfile ? (
-        <UserProfileModule setUserProfile={setUserProfile} />
-      ) : null}
+      <div className="Title">
+        <h1>Icon</h1>
+      </div>
+
+      <div className="Nav">
+        <p>
+          <AiOutlineShoppingCart onClick={navigateToCart} />
+        </p>
+        <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
+        {!loginUser ? (
+          <>
+            <button onClick={() => handleOpen("login")}>Login</button>
+            <p onClick={() => handleOpen("register")}>register</p>
+          </>
+        ) : (
+          <button onClick={() => handleOpen("UserProfile")}>
+            <AiOutlineUser />
+          </button>
+        )}
+        {isRegisterOpen ? (
+          <RegisterForm setRegisterIsOpen={setRegisterIsOpen} />
+        ) : null}
+        {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
+        {userProfile ? (
+          <UserProfileModule setUserProfile={setUserProfile} />
+        ) : null}
+      </div>
     </header>
   );
 }

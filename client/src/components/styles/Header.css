@@ -1,3 +1,21 @@
 header {
     width:100%;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: space-between;
 }
+
+.Title{
+    justify-content: flex-start;
+    
+}
+
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    justify-content: flex-end;
+    gap: 20px;
+}
+
