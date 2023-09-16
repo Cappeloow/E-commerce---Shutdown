@@ -31,24 +31,26 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
     <>
       <dialog className="UserProfileDialogBox" open>
         <p onClick={() => setUserProfile(false)}>x</p>
-        <h1>{loginUser.name}</h1>
-        <p>{loginUser.email}</p>
-        <button onClick={handleClick}>Logout</button>
-        <button onClick={() => setIsClicked(true)}>Order History</button>
-        {orders &&
-          orders.map((order) => (
-            <div key={order.orderId}>
-              <p>{order.orderId}</p>
+        <div className="UserInfo">
+          <h1>{loginUser.name}</h1>
+          <p>{loginUser.email}</p>
+          <button onClick={handleClick}>Logout</button>
+          <button onClick={() => setIsClicked(true)}>Order History</button>
+          {orders &&
+            orders.map((order) => (
+              <div key={order.orderId}>
+                <p>{order.orderId}</p>
 
-              {order.orderedItems.map((product) => (
-                <div key={product.product}>
-                  <p>
-                    {product.quantity}x{product.product} = {product.totalSum}
-                  </p>
-                </div>
-              ))}
-            </div>
-          ))}
+                {order.orderedItems.map((product) => (
+                  <div key={product.product}>
+                    <p>
+                      {product.quantity}x{product.product} = {product.totalSum}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            ))}
+        </div>
       </dialog>
     </>
   ) : null;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
-import { AiOutlineUser } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/Bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
@@ -8,6 +8,9 @@ import RegisterForm from "./RegisterForm";
 import { useUserContext } from "../context/UserContext";
 import UserProfileModule from "./UserProfileModule";
 import { useCartContext } from "../context/CartContext";
+
+import imgLogo2 from "../assets/icons8-cap-64.png";
+
 function Header({}: Props) {
   const { cart } = useCartContext();
   const navigate = useNavigate();
@@ -47,7 +50,7 @@ function Header({}: Props) {
   return (
     <header>
       <div className="Title">
-        <h1>Icon</h1>
+        <img src={imgLogo2} alt="" width={50} />
       </div>
 
       <div className="Nav">
@@ -61,8 +64,11 @@ function Header({}: Props) {
             <p onClick={() => handleOpen("register")}>register</p>
           </>
         ) : (
-          <button onClick={() => handleOpen("UserProfile")}>
-            <AiOutlineUser />
+          <button
+            className="Usericon"
+            onClick={() => handleOpen("UserProfile")}
+          >
+            <BsPersonCircle />
           </button>
         )}
         {isRegisterOpen ? (

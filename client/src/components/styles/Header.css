@@ -1,8 +1,10 @@
 header {
     width:100%;
-    border: 1px solid yellow;
+    
+    background-color: #61b5c636;
     display: flex;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .Title{
@@ -18,4 +20,11 @@ header {
     justify-content: flex-end;
     gap: 20px;
 }
+
+.Usericon{
+    width: 50px;
+    height: 25px;
+}
+
+
 
