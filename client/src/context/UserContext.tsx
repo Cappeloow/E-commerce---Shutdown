@@ -110,7 +110,7 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
   }, [loginUser]);
 
   return (
-    <div>
+    <>
       <UserContext.Provider
         value={{
           logoutUser,
@@ -120,7 +120,7 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
       >
         {children}
       </UserContext.Provider>
-    </div>
+    </>
   );
 };
 

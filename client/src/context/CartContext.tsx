@@ -43,11 +43,11 @@ const CartProvider = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <div>
+    <>
       <CartContext.Provider value={{ cart, addProductToCart }}>
         {children}
       </CartContext.Provider>
-    </div>
+    </>
   );
 };
 

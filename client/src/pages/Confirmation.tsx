@@ -35,7 +35,7 @@ function Confirmation() {
   }, []);
 
   return (
-    <div>
+    <>
       <Header />
       <main>
         {confirmation && (
@@ -58,7 +58,7 @@ function Confirmation() {
         )}
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

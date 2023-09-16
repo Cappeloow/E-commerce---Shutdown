@@ -46,11 +46,11 @@ const ProductProvider = ({ children }: PropsWithChildren) => {
   }, []);
 
   return (
-    <div>
+    <>
       <ProductContext.Provider value={{ products, fetchProducts }}>
         {children}
       </ProductContext.Provider>
-    </div>
+    </>
   );
 };
 
