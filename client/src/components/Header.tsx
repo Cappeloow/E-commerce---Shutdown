@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
 import { BsPersonCircle } from "react-icons/Bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
+import { FiUserPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
@@ -50,7 +52,7 @@ function Header({}: Props) {
   return (
     <header>
       <div className="Title">
-        <img src={imgLogo2} alt="" width={50} />
+        <img onClick={() => navigate("/")} src={imgLogo2} alt="" width={50} />
       </div>
 
       <div className="Nav">
@@ -60,8 +62,12 @@ function Header({}: Props) {
         <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
         {!loginUser ? (
           <>
-            <button onClick={() => handleOpen("login")}>Login</button>
-            <p onClick={() => handleOpen("register")}>register</p>
+            <button onClick={() => handleOpen("login")}>
+              <AiOutlineLogin />
+            </button>
+            <p onClick={() => handleOpen("register")}>
+              <FiUserPlus />
+            </p>
           </>
         ) : (
           <button
