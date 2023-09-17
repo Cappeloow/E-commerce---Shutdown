@@ -46,31 +46,37 @@ function RegisterForm({ setRegisterIsOpen }: Props) {
   };
 
   return (
-    <dialog open>
-      <button onClick={() => setRegisterIsOpen(false)}>X</button>
-      <p className="dialog-title">Registrera dig här</p>
-      <form method="dialog">
-        <input
-          placeholder="användarnamn"
-          type="text"
-          onChange={(e) =>
-            setCustomer({ ...customer, username: e.target.value })
-          }
-        />
-        <input
-          placeholder="lösenord"
-          type="text"
-          onChange={(e) =>
-            setCustomer({ ...customer, password: e.target.value })
-          }
-        />
-        <input
-          placeholder="namn"
-          type="text"
-          onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
-        />
-        <button onClick={registerCustomer}>Skapa</button>
-      </form>
+    <dialog className="LoginDialogBox" open>
+      <h2 className="CloseDiv" onClick={() => setRegisterIsOpen(false)}>
+        X
+      </h2>
+      <div className="LoginWrapper">
+        <p className="dialog-title">Registrera dig här</p>
+        <form className="formDiv" method="dialog">
+          <input
+            placeholder="användarnamn"
+            type="text"
+            onChange={(e) =>
+              setCustomer({ ...customer, username: e.target.value })
+            }
+          />
+          <input
+            placeholder="lösenord"
+            type="text"
+            onChange={(e) =>
+              setCustomer({ ...customer, password: e.target.value })
+            }
+          />
+          <input
+            placeholder="namn"
+            type="text"
+            onChange={(e) => setCustomer({ ...customer, name: e.target.value })}
+          />
+          <button className="LoginRegisterBtn" onClick={registerCustomer}>
+            Skapa
+          </button>
+        </form>
+      </div>
     </dialog>
   );
 }

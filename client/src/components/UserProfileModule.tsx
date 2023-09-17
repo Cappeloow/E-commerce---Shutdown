@@ -30,26 +30,44 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
   return loginUser ? (
     <>
       <dialog className="UserProfileDialogBox" open>
-        <p onClick={() => setUserProfile(false)}>x</p>
-        <div className="UserInfo">
-          <h1>{loginUser.name}</h1>
-          <p>{loginUser.email}</p>
-          <button onClick={handleClick}>Logout</button>
-          <button onClick={() => setIsClicked(true)}>Order History</button>
-          {orders &&
-            orders.map((order) => (
-              <div key={order.orderId}>
-                <p>{order.orderId}</p>
+        <h2 className="CloseDiv" onClick={() => setUserProfile(false)}>
+          x
+        </h2>
+        <div className="UserInfoWrapper">
+          <div className="UserInfo">
+            <div className="UserName">
+              <p>Username: </p>
+              <p>{loginUser.name}</p>
+            </div>
 
-                {order.orderedItems.map((product) => (
-                  <div key={product.product}>
-                    <p>
-                      {product.quantity}x{product.product} = {product.totalSum}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            ))}
+            <div className="Email">
+              <p>Email: </p>
+              <p>{loginUser.email}</p>
+            </div>
+
+            <div className="Buttons">
+              <button onClick={handleClick}>Logout</button>
+              <button onClick={() => setIsClicked(true)}>Order History</button>
+            </div>
+          </div>
+
+          <div className="OrderHistory">
+            {orders &&
+              orders.map((order) => (
+                <div key={order.orderId} className="ProductHistory">
+                  <p>{order.orderId}</p>
+
+                  {order.orderedItems.map((product) => (
+                    <div key={product.product} className="ProductInHistory">
+                      <p>
+                        {product.quantity}x{product.product} ={" "}
+                        {product.totalSum}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ))}
+          </div>
         </div>
       </dialog>
     </>
