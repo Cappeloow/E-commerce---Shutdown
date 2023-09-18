@@ -31,6 +31,7 @@ async function stripeCheckout(req, res) {
         customer:user.id,
         mode:"payment",
         allow_promotion_codes: true,
+        coupon:"CAP15",
         success_url:`${MY_DOMAIN}/confirmation`,
         cancel_url:MY_DOMAIN,
     })
@@ -48,7 +49,6 @@ async function verifyConfirmation(req, res) {
   try {
     const retrieveConfirmation = await stripe.checkout.sessions.retrieve(id);
     const lineItems = await stripe.checkout.sessions.listLineItems(id);
-    console.log("THIS IS MY CONFIRMATION INFO:",retrieveConfirmation);
     const deconstructedLineItems = lineItems.data.map((product) => ({
       id:product.id,
       product: product.description,
