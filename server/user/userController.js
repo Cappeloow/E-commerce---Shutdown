@@ -63,15 +63,10 @@ const logIn = async (req, res) => {
     const existingUserData = JSON.parse(fs.readFileSync(userDataFilePath, 'utf-8'));
     
     const user = existingUserData.find((user) => user.username === username);
-    console.log('this is the username:', username, password);  
-    console.log(existingUserData);
-  console.log(user);    
-
     if (user) {
       const match = await bcrypt.compare(password, user.password);
 
       if (match) {
-        console.log("this is the user", user);
         req.session = user;
         res.status(200).json(user)
         

@@ -34,7 +34,7 @@ function RegisterForm({ setRegisterIsOpen }: Props) {
       });
       console.log(response);
       if (response.status === 201) {
-        setCustomer(defaultCreateCustomerValues);
+        console.log("You've created an account");
       } else {
         const data = await response.json();
         console.log(data);

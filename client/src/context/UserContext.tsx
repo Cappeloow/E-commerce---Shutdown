@@ -91,6 +91,7 @@ const UserProvider = ({ children }: PropsWithChildren<object>) => {
       try {
         if (loginUser) {
           console.log("is logged in");
+          console.log(loginUser);
         } else {
           const response = await fetch("/api/user/authorize");
           if (response.status === 200) {

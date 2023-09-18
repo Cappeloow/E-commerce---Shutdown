@@ -1,29 +1,37 @@
-# Krav för Godkänt
+## 2.Det skall gå att ange en rabattkod för att få rabatt på sitt köp (Detta görs genom Stripe)
 
-1. Uppgiften lämnas in i tid.
+# SIMPLE-FULLSTACK-APPLICATION-WITH-STRIPE-INTEGRATION
 
-#### 2.Produkter ska listas på en sida.
+# Webshop with Stripe Integration
 
-#### 3.Produkter som visas och köps skall hämtas ifrån Stripe.
+## Description
 
-#### 4.Det ska gå att lägga till produkter i en kundvagn.
+This is a simple webshop application that allows users to place orders and make payments through Stripe integration. Users can register and log in, and their information is stored as customers in Stripe. Usernames/emails and encrypted passwords are saved in a JSON file on the server. User login is managed using cookies. All products are managed through Stripe.
 
-#### 5.Baserad på kundvagnen skall det gå att lägga en order genom Stripe.
+## Requirements
 
-#### 6.Man skall kunna registrera sig som en användare i webbshoppen. Detta skall resultera i att en ”Customer” skapas i Stripe och användaren sparar i en JSON-fil. (samtliga lösenord skall sparas hashade).
+- User registration and login.
+- Stripe integration for payment processing.
+- Order storage in a JSON file on the server.
+- User storage in a JSON file on the server.
+- Backend: Node.js/Express
+- Frontend: React/Typescript
 
-#### 7.Man skall kunna logga in som kund. Den inloggade kunden (som även är sparad i Stripe) skall användas vid placering av order.
+## Getting Started
 
-#### 8.Man skall inte kunna placera en order om man inte är inloggad.
+To build and run the project, follow these steps:
 
-## Krav för väl godkänt
+1. Clone the GitHub repository
+2. Open up two terminals, navigate using `cd server` and `cd client` on each terminal.
+3. Install the necessary dependencies using `npm install` in both the server and client directories.
+4. Configure your Stripe API keys in the server configuration file.
+5. Start the server using `npm start` in the server directory.
+6. Start the client using `npm start` in the client directory.
+7. Access the webshop in your browser using `npm run dev` when you are in the `/client` directory.
 
-#### 1.Alla punkter för godkänt är uppfyllda
+## How to Use
 
-2.Det skall gå att ange en rabattkod för att få rabatt på sitt köp (Detta görs genom Stripe)
-
-#### 3.Man skall som inloggad kunna se sina lagda ordrar
-
-#### 4.Samtliga placerade ordrar skall sparas till en lista i en JSON-fil.
-
-##Tror att den är löst?### 5.Ordern får inte under några omständigheter läggas utan genomförd betalning! (dvs. Spara aldrig ett orderobjekt såvida ni inte fått bekräftelse tillbaka ifrån stripe att betalningen gått igenom)
+1. Register for an account or log in if you already have one.
+2. Browse the products and add them to your cart.
+3. Proceed to checkout and make a payment using the provided test card information. - `https://stripe.com/docs/testing`
+4. Upon successful payment validation, your order will be saved on the server and you will see the confirmation page if you successfully made an order.
