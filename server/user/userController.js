@@ -65,7 +65,7 @@ const logIn = async (req, res) => {
     const user = existingUserData.find((user) => user.username === username);
     if (user) {
       const match = await bcrypt.compare(password, user.password);
-
+      delete user.password 
       if (match) {
         req.session = user;
         res.status(200).json(user)

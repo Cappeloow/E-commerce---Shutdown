@@ -1,7 +1,5 @@
 ## 2.Det skall gå att ange en rabattkod för att få rabatt på sitt köp (Detta görs genom Stripe)
 
-# SIMPLE-FULLSTACK-APPLICATION-WITH-STRIPE-INTEGRATION
-
 # Webshop with Stripe Integration
 
 ## Description
