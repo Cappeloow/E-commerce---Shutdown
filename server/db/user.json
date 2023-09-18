@@ -81,5 +81,12 @@
     "name": "cas",
     "email": "cass@hotmail.com",
     "password": "$2b$10$rR4HUK6w5Q6crGUMTGpuee5iTXnMEivJu0zb7sxhETf/iUvJXcEIe"
+  },
+  {
+    "id": "cus_OevV8FkwB61kvr",
+    "username": "skida@hotmail.com",
+    "name": "skida",
+    "email": "skida@hotmail.com",
+    "password": "$2b$10$Ja8MTgP.Zeq5zrnTlGvfq.884TCFZAaUwUnPIi/hv.k2gWjc9X.H2"
   }
 ]

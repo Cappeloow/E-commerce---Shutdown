@@ -19,5 +19,26 @@
     ],
     "orderSum": 54700,
     "currency": "sek"
+  },
+  {
+    "orderId": "cs_test_b14H2rfj5UbQHaYhZNSnp9Pjy758fMApLgWyat51TX0C9EQgGPZyr1bnKt",
+    "email": "skida@hotmail.com",
+    "name": "skida",
+    "orderedItems": [
+      {
+        "id": "li_1Nrbf8D1wiMUpmPwC27iH7Hl",
+        "product": "New Röd Keps - Callaway",
+        "quantity": 4,
+        "totalSum": 796
+      },
+      {
+        "id": "li_1Nrbf8D1wiMUpmPw2G6edpKg",
+        "product": "New Keps - Brooklyn - Svart",
+        "quantity": 2,
+        "totalSum": 298
+      }
+    ],
+    "orderSum": 109400,
+    "currency": "sek"
   }
 ]

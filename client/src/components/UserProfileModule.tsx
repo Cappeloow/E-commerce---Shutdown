@@ -60,7 +60,7 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
                     <div key={product.id} className="ProductInHistory">
                       <p>
                         {product.quantity}x {product.product} -
-                        {product.totalSum} {product.currency}
+                        {product.totalSum} {order.currency}
                       </p>
                     </div>
                   ))}
