@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useUserContext } from "../context/UserContext";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import "../components/styles/Confirmation.css";
+import imgLogo from "../assets/icons8-cap-100.png";
 
 function Confirmation() {
   const [confirmation, setConfirmation] = useState(null);
@@ -38,24 +40,33 @@ function Confirmation() {
     <>
       <Header />
       <main>
-        {confirmation && (
-          <div>
-            <p>
-              Thank you for the purchase {confirmation.customer_details.name}!
-            </p>
-            {items.data.map((product) => (
-              <div key={product.id}>
-                <p>
-                  {product.quantity} x {product.description}
-                </p>
+        <div className="ConfirmationPage">
+          <img src={imgLogo} alt="" width={60} />
+          {confirmation && (
+            <div className="ConfirmationWrapper">
+              <h2>
+                Thank you for the purchase {confirmation.customer_details.name}!
+              </h2>
+
+              <br />
+              <div className="ProductWrapper">
+                {items.data.map((product) => (
+                  <div key={product.id} className="ConfirmationProduct">
+                    <p>
+                      - {product.quantity} x {product.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
-            <p>
-              Total Summa:
-              {confirmation.amount_total / 100} kr
-            </p>
-          </div>
-        )}
+
+              <br />
+              <p>
+                Total Summa:
+                {confirmation.amount_total / 100} kr
+              </p>
+            </div>
+          )}
+        </div>
       </main>
       <Footer />
     </>

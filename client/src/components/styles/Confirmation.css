@@ -1,0 +1,39 @@
+.ConfirmationPage{
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    height: 50%;
+    width: 50%;
+    gap: 20px;
+    border: 1px solid #61b6c6;
+background-color: rgba(255, 255, 255, 0.137);
+border-radius: 10px;
+}
+
+.ConfirmationPage h2{
+    color:  #61b6c6;
+}
+
+.ConfirmationPage img{
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ConfirmationProduct{
+    border-bottom:1px solid rgba(255, 255, 255, 0.385);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+

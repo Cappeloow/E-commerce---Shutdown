@@ -1,3 +1,30 @@
 header {
     width:100%;
+    
+    background-color: #61b5c636;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
+
+.Title{
+    justify-content: flex-start;
+    
+}
+
+.Nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.Usericon{
+    width: 50px;
+    height: 25px;
+}
+
+
+

@@ -67,5 +67,19 @@
     "name": "lolo",
     "email": "lolo@hotmail.com",
     "password": "$2b$10$VogBgdM/t2/c5SSU5Asx5uZmfoLFtCVkDoZlEhAHoyhtyEFMHSJH."
+  },
+  {
+    "id": "cus_OeXh98dHlWrC7m",
+    "username": "agneta@gmail.com",
+    "name": "Agneta",
+    "email": "agneta@gmail.com",
+    "password": "$2b$10$zOb1OZA4/7Z4KoPCI1fnJ.DGbfYZ5K6.BGdGinIPfM5SDo.9pA5dC"
+  },
+  {
+    "id": "cus_OeuvirAQtLH5nt",
+    "username": "cass@hotmail.com",
+    "name": "cas",
+    "email": "cass@hotmail.com",
+    "password": "$2b$10$rR4HUK6w5Q6crGUMTGpuee5iTXnMEivJu0zb7sxhETf/iUvJXcEIe"
   }
 ]

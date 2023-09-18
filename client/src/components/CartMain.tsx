@@ -42,23 +42,28 @@ function CartMain() {
   };
 
   return (
-    <main className="allProductsContainer">
-      {cart &&
-        cart.map((product, index) => (
-          <div key={index}>
-            <ProductCard product={product} />
-          </div>
-        ))}
-      <p>Totala kostnaden: {totalSum()} kr</p>
-      {loginUser ? (
-        <button onClick={handlePayment}>Betala</button>
-      ) : (
-        <>
-          <button onClick={() => handleOpen("login")}>Login</button>
-          {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
-          <button disabled>Betala</button>
-        </>
-      )}
+    <main className="allProductsContainerCard">
+      <h1>In your basket</h1>
+      <div className="allProductsContainer">
+        {cart &&
+          cart.map((product, index) => (
+            <div key={index} className="productWrapper">
+              <ProductCard product={product} />
+            </div>
+          ))}
+      </div>
+      <div className="cartSummary">
+        <p>Totala kostnaden: {totalSum()} kr</p>
+        {loginUser ? (
+          <button onClick={handlePayment}>Betala</button>
+        ) : (
+          <>
+            <button onClick={() => handleOpen("login")}>Login</button>
+            {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
+            <button disabled>Betala</button>
+          </>
+        )}
+      </div>
     </main>
   );
 }

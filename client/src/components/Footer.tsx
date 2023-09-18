@@ -3,7 +3,7 @@ import "./styles/Footer.css";
 type Props = {};
 
 function Footer({}: Props) {
-  return <footer>Footer</footer>;
+  return <footer>© Casper Wernersson 2023</footer>;
 }
 
 export default Footer;

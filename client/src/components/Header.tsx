@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
-import { AiOutlineUser } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/Bs";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineLogin } from "react-icons/ai";
+import { FiUserPlus } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import { useUserContext } from "../context/UserContext";
 import UserProfileModule from "./UserProfileModule";
 import { useCartContext } from "../context/CartContext";
+
+import imgLogo2 from "../assets/icons8-cap-64.png";
+
 function Header({}: Props) {
   const { cart } = useCartContext();
   const navigate = useNavigate();
@@ -46,28 +51,40 @@ function Header({}: Props) {
 
   return (
     <header>
-      <h1>This is my header</h1>
-      <p>
-        <AiOutlineShoppingCart onClick={navigateToCart} />
-      </p>
-      <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
-      {!loginUser ? (
-        <>
-          <button onClick={() => handleOpen("login")}>Login</button>
-          <p onClick={() => handleOpen("register")}>register</p>
-        </>
-      ) : (
-        <button onClick={() => handleOpen("UserProfile")}>
-          <AiOutlineUser />
-        </button>
-      )}
-      {isRegisterOpen ? (
-        <RegisterForm setRegisterIsOpen={setRegisterIsOpen} />
-      ) : null}
-      {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
-      {userProfile ? (
-        <UserProfileModule setUserProfile={setUserProfile} />
-      ) : null}
+      <div className="Title">
+        <img onClick={() => navigate("/")} src={imgLogo2} alt="" width={50} />
+      </div>
+
+      <div className="Nav">
+        <p>
+          <AiOutlineShoppingCart onClick={navigateToCart} />
+        </p>
+        <p>{cart.length >= 1 ? <p>{totalQuantityInCart()}</p> : null}</p>
+        {!loginUser ? (
+          <>
+            <button onClick={() => handleOpen("login")}>
+              <AiOutlineLogin />
+            </button>
+            <p onClick={() => handleOpen("register")}>
+              <FiUserPlus />
+            </p>
+          </>
+        ) : (
+          <button
+            className="Usericon"
+            onClick={() => handleOpen("UserProfile")}
+          >
+            <BsPersonCircle />
+          </button>
+        )}
+        {isRegisterOpen ? (
+          <RegisterForm setRegisterIsOpen={setRegisterIsOpen} />
+        ) : null}
+        {isLoginOpen ? <LoginForm setLoginIsOpen={setLoginIsOpen} /> : null}
+        {userProfile ? (
+          <UserProfileModule setUserProfile={setUserProfile} />
+        ) : null}
+      </div>
     </header>
   );
 }
