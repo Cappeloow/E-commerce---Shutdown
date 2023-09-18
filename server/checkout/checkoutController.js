@@ -48,18 +48,23 @@ async function verifyConfirmation(req, res) {
   try {
     const retrieveConfirmation = await stripe.checkout.sessions.retrieve(id);
     const lineItems = await stripe.checkout.sessions.listLineItems(id);
-    console.log("THIS IS THE ACTUAL INFORMATION FROM THE LATEST ORDER:",retrieveConfirmation);
+    console.log("THIS IS MY CONFIRMATION INFO:",retrieveConfirmation);
     const deconstructedLineItems = lineItems.data.map((product) => ({
+      id:product.id,
       product: product.description,
       quantity: product.quantity,
-      totalSum: product.amount_total/100,
+      totalSum: product.amount_total/100
     }));
+
+    console.log("THIS IS MY DECONSTRUCT NEED TO SEE THE TOTALSUM OF ALL ITEMS:",deconstructedLineItems);
 
     const newOrder = {
       orderId:retrieveConfirmation.id,
-      email: req.session.email,
-      name: req.session.name,
+      email: retrieveConfirmation.customer_details.email,
+      name: retrieveConfirmation.customer_details.name,
       orderedItems: deconstructedLineItems,
+      orderSum:retrieveConfirmation.amount_total,
+      currency:retrieveConfirmation.currency
     };
 
     const ordersFilePath = path.join(__dirname, '..', 'db', 'orders.json');
@@ -68,7 +73,14 @@ async function verifyConfirmation(req, res) {
     const existingOrders = fs.readFileSync(ordersFilePath, 'utf-8');
     const orders = JSON.parse(existingOrders);
 
-    orders.push(newOrder);
+
+    
+    const foundOrder = orders.find((order) => order.orderId === newOrder.orderId)
+    if (!foundOrder){
+      orders.push(newOrder);
+    } else {
+      console.log('order already exists')
+    }
 
     // writeFile
     fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2));

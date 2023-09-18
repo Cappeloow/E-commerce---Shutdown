@@ -56,15 +56,17 @@ const UserProfileModule = ({ setUserProfile }: Props) => {
               orders.map((order) => (
                 <div key={order.orderId} className="ProductHistory">
                   <p>{order.orderId}</p>
-
                   {order.orderedItems.map((product) => (
-                    <div key={product.product} className="ProductInHistory">
+                    <div key={product.id} className="ProductInHistory">
                       <p>
-                        {product.quantity}x{product.product} ={" "}
-                        {product.totalSum}
+                        {product.quantity}x {product.product} -
+                        {product.totalSum} {product.currency}
                       </p>
                     </div>
                   ))}
+                  <p>
+                    {order.orderSum / 100} {order.currency}
+                  </p>
                 </div>
               ))}
           </div>
