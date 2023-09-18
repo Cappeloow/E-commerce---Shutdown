@@ -31,7 +31,6 @@ async function stripeCheckout(req, res) {
         customer:user.id,
         mode:"payment",
         allow_promotion_codes: true,
-        coupon:"CAP15",
         success_url:`${MY_DOMAIN}/confirmation`,
         cancel_url:MY_DOMAIN,
     })
