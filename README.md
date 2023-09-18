@@ -32,4 +32,5 @@ To build and run the project, follow these steps:
 1. Register for an account or log in if you already have one.
 2. Browse the products and add them to your cart.
 3. Proceed to checkout and make a payment using the provided test card information. - `https://stripe.com/docs/testing`
-4. Upon successful payment validation, your order will be saved on the server and you will see the confirmation page if you successfully made an order.
+4. If you wish to use a Coupon to get some discount: `CAP15`
+5. Upon successful payment validation, your order will be saved on the server and you will see the confirmation page if you successfully made an order.
