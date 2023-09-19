@@ -2,7 +2,8 @@
 
 - Created by Casper Wernersson
 - Github Link: https://github.com/Cappeloow/Simple-Webshop-Using-Stripe-For-Checkout
--
+
+* Everything for the grade G and VG is done.
 
 ## Description
 
