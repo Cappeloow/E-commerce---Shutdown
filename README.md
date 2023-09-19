@@ -1,8 +1,17 @@
 # Webshop with Stripe Integration
 
+- Created by Casper Wernersson
+- Github Link: https://github.com/Cappeloow/Simple-Webshop-Using-Stripe-For-Checkout
+-
+
 ## Description
 
 This is a simple webshop application that allows users to place orders and make payments through Stripe integration. Users can register and log in, and their information is stored as customers in Stripe. Usernames/emails and encrypted passwords are saved in a JSON file on the server. User login is managed using cookies. All products are managed through Stripe.
+
+## Technologies
+
+- Backend: Node.js/Express
+- Frontend: React/Typescript
 
 ## Requirements
 
@@ -10,8 +19,8 @@ This is a simple webshop application that allows users to place orders and make 
 - Stripe integration for payment processing.
 - Order storage in a JSON file on the server.
 - User storage in a JSON file on the server.
-- Backend: Node.js/Express
-- Frontend: React/Typescript
+- Customers should be allowed to use coupons at checkout
+- Displaying customers orders - if payment was successful.
 
 ## Getting Started
 
