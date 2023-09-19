@@ -30,8 +30,8 @@ To build and run the project, follow these steps:
 1. Clone the GitHub repository
 2. Open up two terminals, navigate using `cd server` and `cd client` on each terminal.
 3. Install the necessary dependencies using `npm install` in both the server and client directories.
-4. Start the server using `npm start` in the server directory.
-5. Start the client using `npm start` in the client directory.
+4. Start the server using `npm run dev` in the server directory.
+5. Start the client using `npm run dev` in the client directory.
 6. Access the webshop in your browser using `npm run dev` when you are in the `/client` directory.
 
 ## How to Use
