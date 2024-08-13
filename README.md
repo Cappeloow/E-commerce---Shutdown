@@ -3,8 +3,6 @@
 - Created by Casper Wernersson
 - Github Link: https://github.com/Cappeloow/Simple-Webshop-Using-Stripe-For-Checkout
 
-* Everything for the grade G and VG is done.
-
 ## Description
 
 This is a simple webshop application that allows users to place orders and make payments through Stripe integration. Users can register and log in, and their information is stored as customers in Stripe. Usernames/emails and encrypted passwords are saved in a JSON file on the server. User login is managed using cookies. All products are managed through Stripe.
