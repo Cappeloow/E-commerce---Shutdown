@@ -2,7 +2,6 @@ const env = require('dotenv');
 env.config();
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
 const CLIENT_URL = "http://localhost:5173"
 

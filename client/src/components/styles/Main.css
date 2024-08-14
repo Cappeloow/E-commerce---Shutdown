@@ -1,11 +1,11 @@
 main {
-     height:100%; 
+    height:60%;
     background-color: black;
 }
 
 .HeroSection{
 
-    height: 60vh;
+    height: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
